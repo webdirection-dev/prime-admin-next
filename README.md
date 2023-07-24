@@ -8,4 +8,4 @@
 - Server Actions
 - Middleware
 
-[DEMO](https://amaz0n-next.vercel.app)
+[DEMO](https://prime-admin-next.vercel.app)
