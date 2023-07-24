@@ -1,0 +1,17 @@
+.DS_Store
+.vscode
+.idea
+.vercel
+/node_modules
+package-lock.json
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
