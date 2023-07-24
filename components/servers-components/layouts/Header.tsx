@@ -1,12 +1,6 @@
-
 import Link from 'next/link'
-import { aggregateStartProducts } from '@/utils/lib/mongodb/fetchingProducts'
 
-export default async function Header() {
-    const { aggregation } = await aggregateStartProducts()
-    const { allDocumentCount, productsOfCategory, productsOfBrands } = aggregation
-    const startPropr = JSON.stringify({ allDocumentCount, productsOfCategory, productsOfBrands })
-
+export default function Header() {
     return (
         <header>
             <nav className='shadow-md'>
