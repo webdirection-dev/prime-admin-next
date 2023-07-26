@@ -1,3 +1,5 @@
+import "primereact/resources/primereact.min.css"
+import "primeicons/primeicons.css"
 import '../utils/styles/reset.css'
 import '../utils/styles/reset.css'
 import '../utils/styles/globals.css'
@@ -15,6 +17,11 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
     <html lang="en" suppressHydrationWarning={true}>
+        <head>
+            {/* <link id="app-theme" href="/themes/md-dark-deeppurple/theme.css" rel="stylesheet" /> */}
+            <link id="app-theme" href="/themes/md-light-deeppurple/theme.css" rel="stylesheet" />
+        </head>
+
         <body className='flex flex-col justify-between' style={{ minHeight: '100vh' }}>
             <Providers>
                 <General>

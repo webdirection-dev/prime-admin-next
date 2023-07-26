@@ -1,14 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import { cartReducer } from "./cart-slice"
-import { orderReducer } from './order-slice'
-import { productsReducer } from './products-slice'
+import { menuReducer } from './menu-slice'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { configureStore } from "@reduxjs/toolkit"
 
 const rootReducer = combineReducers({
-    cartReducer,
-    orderReducer,
-    productsReducer,
+    menuReducer,
 })
 
 export const store = configureStore({

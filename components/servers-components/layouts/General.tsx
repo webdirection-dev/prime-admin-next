@@ -1,15 +1,18 @@
 import Header from "@/components/servers-components/layouts/Header"
 import Footer from "@/components/servers-components/layouts/Footer"
 import Aside from '../Aside'
+import ContainerMain from '@/components/clients-components/ContainerMain'
 
 const General = ({ children }: any) => (
     <>
         <Header />
-        <main className='' style={{ minHeight: 'calc(100vh - 3rem - 2.5rem - 1rem)' }}>
+        <main style={{ minHeight: 'calc(100vh - 5rem)' }}>
             <Aside />
-            {children}
+            <ContainerMain>
+                {children}
+            </ContainerMain>
         </main>
-        <Footer />
+        {/* <Footer /> */}
     </>
 )
 export default General
