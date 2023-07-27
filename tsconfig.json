@@ -37,7 +37,8 @@
         ".next/types/**/*.ts",
         "mongodb.d.ts",
         "components/clients-components/homeCarousel/HomeCarousel.tsx",
-        "components/clients-components/search/hooks/useSort.js"
+        "components/clients-components/search/hooks/useSort.js",
+        "components/clients-components/hooks/use-match-desktop.ts"
     ],
     "exclude": [
         "node_modules"
