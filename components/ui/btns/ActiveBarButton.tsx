@@ -31,9 +31,9 @@ export default function ActiveBarButton({ name }: any) {
 
             {!isNotDesktop && (
                 <ul className='flex justify-content-between align-items-center ml-auto'>
-                    <HeaderButton name={'calendar'} />
-                    <HeaderButton name={'user'} />
-                    <HeaderButton name={'cog'} />
+                    <li><HeaderButton name={'calendar'} /></li>
+                    <li><HeaderButton name={'user'} /></li>
+                    <li><HeaderButton name={'cog'} /></li>
                 </ul>
             )}
         </>

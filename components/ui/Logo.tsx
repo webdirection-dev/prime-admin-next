@@ -15,7 +15,7 @@ export default function Logo() {
         >
             <Image
                 src={`/img/logo/logo-${!isThemeLight ? 'white' : 'dark'}.svg`}
-                width={47.22}
+                width={47}
                 height={35}
                 alt="logo"
             />
