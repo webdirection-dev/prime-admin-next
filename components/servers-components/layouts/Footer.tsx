@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         // <footer className='flex justify-around items-center h-10 shadow-inner'>
         <footer className='flex justify-content-between mr-5 pt-3' style={classes}>
-            <p className='text-500'>NEXT MGO © {new Date().getFullYear()}</p>
+            <p className='text-500 w-4'>NEXT MGO © {new Date().getFullYear()}</p>
 
             <Image
                 src={`/img/logo/logo-${colorScheme}.svg`}
@@ -22,7 +22,7 @@ const Footer = () => {
                 alt="logo"
             />
 
-            <div className='flex'>
+            <div className='flex justify-content-end w-4'>
                 <p className='mr-1 text-500'>With </p>
 
                 <i className="pi pi-heart mr-1 text-pink-300" ></i>
