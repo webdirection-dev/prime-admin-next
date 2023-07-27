@@ -2,8 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from './index'
 
 const initialState: any = {
-    isThemeLight: false,
+    isThemeLight: true,
     isShowAside: true,
+    isShowMobileAside: false,
 }
 
 const menuSlice = createSlice({
@@ -27,14 +28,22 @@ const menuSlice = createSlice({
                 isShowAside: !state.isShowAside
             }
         },
+
+        setIsShowMobileAside: (state, actions) => {
+            return {
+                ...state,
+                isShowMobileAside: actions.payload
+            }
+        },
     }
 })
 
-export const { setIsShowAsideMenu, setIsLightTheme } = menuSlice.actions
+export const { setIsShowAsideMenu, setIsShowMobileAside, setIsLightTheme } = menuSlice.actions
 export const menuReducer = menuSlice.reducer
 
 //selectors
 export const selectMenuInfo = (state: RootState) => ({
     isThemeLight: state.menuReducer.isThemeLight,
     isShowAside: state.menuReducer.isShowAside,
+    isShowMobileAside: state.menuReducer.isShowMobileAside,
 })

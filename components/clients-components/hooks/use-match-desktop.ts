@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect } from 'react'
 
-const isDesktop = matchMedia('(max-width: 992px)')
+const isDesktop = matchMedia('(max-width: 991px)')
 
 export const useMatchDesktop = () => {
     const [deskScreen, setDeskScreen] = useState(isDesktop.matches)
