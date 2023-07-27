@@ -6,13 +6,13 @@ import ContainerMain from '@/components/clients-components/ContainerMain'
 const General = ({ children }: any) => (
     <>
         <Header />
-        <main style={{ minHeight: 'calc(100vh - 5rem)' }}>
+        <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='mt-8'>
             <Aside />
             <ContainerMain>
                 {children}
+                <Footer />
             </ContainerMain>
         </main>
-        {/* <Footer /> */}
     </>
 )
 export default General

@@ -1,20 +1,38 @@
+import Logo from '@/components/ui/Logo'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const Footer = () => {
+    // const colorScheme = 'white'
+    const colorScheme = 'dark'
+
+    const classes = {
+        borderTop: '1px solid var(--surface-border)',
+    }
 
     return (
-        <footer className='flex justify-around items-center h-10 shadow-inner'>
-            <p>MyStore © {new Date().getFullYear()}</p>
+        // <footer className='flex justify-around items-center h-10 shadow-inner'>
+        <footer className='flex justify-content-between mr-5 pt-3' style={classes}>
+            <p className='text-500'>NEXT MGO © {new Date().getFullYear()}</p>
 
-            <div className='group flex'>
-                <p className='mr-0.5 text-gray-700 dark:text-white'>With Love</p>
+            <Image
+                src={`/img/logo/logo-${colorScheme}.svg`}
+                width={27}
+                height={20}
+                alt="logo"
+            />
 
-                <p className='mr-1 text-gray-700 dark:text-white'>by</p>
+            <div className='flex'>
+                <p className='mr-1 text-500'>With </p>
+
+                <i className="pi pi-heart mr-1 text-pink-300" ></i>
+
+                <p className='mr-1 text-500'> by</p>
                 <Link
-                    className='group-hover:underline text-blue-400'
+                    className='text-blue-400'
                     href={'https://github.com/webdirection-dev'}> NextJS
-                    <span className='text-gray-700 dark:text-white'> and</span>
-                    <span className='text-green-500 dark:text-green-400'> MongoDB</span>
+                    <span className='text-500'> and</span>
+                    <span className='text-green-500'> MongoDB</span>
                 </Link>
             </div>
         </footer>

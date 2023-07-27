@@ -13,7 +13,7 @@ export default function ContainerMain({ children }: any) {
     }
 
     return (
-        <div className='pt-28 px-16' style={{ ...classes }} >
+        <div className='flex flex-column justify-content-between py-5' style={classes} >
             {children}
         </div>
     )

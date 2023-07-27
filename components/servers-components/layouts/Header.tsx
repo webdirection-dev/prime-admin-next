@@ -4,7 +4,7 @@ import Logo from '@/components/ui/Logo'
 export default function Header() {
     return (
         <header
-            className='fixed top-0 left-0 flex items-center w-full h-20 px-8 z-50'
+            className='fixed top-0 left-0 flex align-items-center w-full h-5rem px-5 z-5'
             style={{
                 backgroundColor: "var(--surface-card)",
                 transition: 'left .2s',
@@ -15,7 +15,7 @@ export default function Header() {
 
             <HeaderButton name={'toggle-aside'} />
 
-            <ul className='flex justify-between items-center h-12 ml-auto px-4'>
+            <ul className='flex justify-content-between align-items-center ml-auto'>
                 <HeaderButton name={'calendar'} />
                 <HeaderButton name={'user'} />
                 <HeaderButton name={'cog'} />

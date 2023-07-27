@@ -1,8 +1,6 @@
-import '../../../utils/styles/sass/users.scss'
-
 export default function Users() {
     return <>
-        <div className='home h-10'>
+        <div className=''>
             <h1>Users</h1>
         </div>
     </>

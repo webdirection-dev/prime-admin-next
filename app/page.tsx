@@ -1,8 +1,6 @@
-// import '../utils/styles/sass/home.scss'
-
 export default function Home() {
     return <>
-        <div className='home container h-10'>
+        <div className=''>
             <h1>Test!</h1>
         </div>
     </>

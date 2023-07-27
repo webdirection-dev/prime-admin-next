@@ -1,6 +1,6 @@
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
-import '../utils/styles/reset.css'
+import 'primeflex/primeflex.css'
 import '../utils/styles/reset.css'
 import '../utils/styles/globals.css'
 import Providers from '../components/clients-components/Providers'
@@ -22,7 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
             <link id="app-theme" href="/themes/md-light-deeppurple/theme.css" rel="stylesheet" />
         </head>
 
-        <body className='flex flex-col justify-between' style={{ minHeight: '100vh' }}>
+        <body className='flex flex-column justify-content-between' style={{ minHeight: '100vh' }}>
             <Providers>
                 <General>
                     {children}

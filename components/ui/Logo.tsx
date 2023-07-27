@@ -8,7 +8,7 @@ export default function Logo() {
     return (
         <Link
             href='/'
-            className='flex items-center'
+            className='flex align-items-center'
             style={{ color: 'var(--surface-900)', width: '300px' }}
         >
             <Image
