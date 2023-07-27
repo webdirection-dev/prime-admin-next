@@ -1,5 +1,7 @@
-import HeaderButton from '@/components/ui/HeaderButton'
+import LeftBarButton from '@/components/ui/btns/LeftBarButton'
 import Logo from '@/components/ui/Logo'
+import ThemeButton from '@/components/ui/btns/ThemeButton'
+import ActiveBarButton from '@/components/ui/btns/ActiveBarButton'
 
 export default function Header() {
     return (
@@ -12,14 +14,9 @@ export default function Header() {
             }}
         >
             <Logo />
-
-            <HeaderButton name={'toggle-aside'} />
-
-            <ul className='flex justify-content-between align-items-center ml-auto'>
-                <HeaderButton name={'calendar'} />
-                <HeaderButton name={'user'} />
-                <HeaderButton name={'cog'} />
-            </ul>
+            <LeftBarButton />
+            <ThemeButton />
+            <ActiveBarButton />
         </header>
     )
 }

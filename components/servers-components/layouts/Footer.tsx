@@ -1,22 +1,23 @@
-import Logo from '@/components/ui/Logo'
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useAppSelector } from '@/utils/lib/store'
+import { selectMenuInfo } from '@/utils/lib/store/menu-slice'
 
 const Footer = () => {
-    // const colorScheme = 'white'
-    const colorScheme = 'dark'
+    const { isThemeLight } = useAppSelector(store => selectMenuInfo(store))
 
     const classes = {
         borderTop: '1px solid var(--surface-border)',
     }
 
     return (
-        // <footer className='flex justify-around items-center h-10 shadow-inner'>
         <footer className='flex flex-column-reverse justify-content-between mr-5 pt-3 lg:flex-row' style={classes}>
             <p className='text-center text-500 w-full lg:w-4 lg:text-left'>NEXT MGO © {new Date().getFullYear()}</p>
 
             <Image
-                src={`/img/logo/logo-${colorScheme}.svg`}
+                src={`/img/logo/logo-${!isThemeLight ? 'white' : 'dark'}.svg`}
                 width={27}
                 height={20}
                 alt="logo"

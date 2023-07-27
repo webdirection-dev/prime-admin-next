@@ -1,6 +1,6 @@
 import Header from "@/components/servers-components/layouts/Header"
 import Footer from "@/components/servers-components/layouts/Footer"
-import Aside from '../Aside'
+import Aside from '../../clients-components/Aside'
 import ContainerMain from '@/components/clients-components/ContainerMain'
 
 const General = ({ children }: any) => (

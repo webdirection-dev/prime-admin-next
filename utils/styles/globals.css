@@ -48,3 +48,13 @@ body {
   color: var(--text-color);
   background-color: var(--surface-hover);
 }
+
+.logo {
+  width: auto;
+}
+
+@media (min-width: 992px) {
+  .logo {
+    width: 300px;
+  }
+}

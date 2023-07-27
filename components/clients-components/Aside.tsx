@@ -1,12 +1,12 @@
 'use client'
 
-import { useAppSelector } from '@/utils/lib/store'
-import { selectMenuInfo } from '@/utils/lib/store/menu-slice'
-import { useState } from 'react'
+import { useAside } from './hooks/use-aside'
+import { useMatchDesktop } from './hooks/use-match-desktop'
 
 export default function Aside() {
-    const { isShowAside } = useAppSelector(store => selectMenuInfo(store))
-    const [isShow, setIsShow] = useState(false)
+    const { isNotDesktop } = useMatchDesktop()
+    const { isShowAside } = useAside()
+
     const classes = {
         width: '300px',
         height: 'calc(100vh - 9rem)',
