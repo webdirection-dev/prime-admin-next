@@ -12,17 +12,18 @@ const Footer = () => {
 
     return (
         // <footer className='flex justify-around items-center h-10 shadow-inner'>
-        <footer className='flex justify-content-between mr-5 pt-3' style={classes}>
-            <p className='text-500 w-4'>NEXT MGO © {new Date().getFullYear()}</p>
+        <footer className='flex flex-column-reverse justify-content-between mr-5 pt-3 lg:flex-row' style={classes}>
+            <p className='text-center text-500 w-full lg:w-4 lg:text-left'>NEXT MGO © {new Date().getFullYear()}</p>
 
             <Image
                 src={`/img/logo/logo-${colorScheme}.svg`}
                 width={27}
                 height={20}
                 alt="logo"
+                className='mx-auto mb-2 lg:mb-0'
             />
 
-            <div className='flex justify-content-end w-4'>
+            <div className='hidden justify-content-end w-full lg:w-4 lg:flex'>
                 <p className='mr-1 text-500'>With </p>
 
                 <i className="pi pi-heart mr-1 text-pink-300" ></i>
