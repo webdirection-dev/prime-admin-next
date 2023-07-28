@@ -1,0 +1,38 @@
+export const cardsInfo = [
+    {
+        type: 'orders',
+        data: '152',
+        icon: 'pi-shopping-cart',
+        color: 'blue-500',
+        bgColor: 'blue-100',
+        details: '24 new',
+        description: 'since last visit',
+    },
+    {
+        type: 'revenue',
+        data: '$2.100',
+        icon: 'pi-map-marker',
+        color: 'orange-500',
+        bgColor: 'orange-100',
+        details: '%52+',
+        description: 'since last week',
+    },
+    {
+        type: 'customers',
+        data: '28441',
+        icon: 'pi-inbox',
+        color: 'cyan-500',
+        bgColor: 'cyan-100',
+        details: '520',
+        description: 'newly registered',
+    },
+    {
+        type: 'comments',
+        data: '152 Unread',
+        icon: 'pi-comment',
+        color: 'purple-500',
+        bgColor: 'purple-100',
+        details: '85',
+        description: 'responded',
+    },
+]

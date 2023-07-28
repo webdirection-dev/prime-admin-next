@@ -1,7 +1,9 @@
-import Dashboard from '@/components/dashboard/page'
+import TopPanel from '@/components/dashboard/TopPanel'
 
 export default function Home() {
-    return <>
-        <Dashboard />
-    </>
+    return (
+        <div className='grid mr-5'>
+            <TopPanel />
+        </div>
+    )
 }
