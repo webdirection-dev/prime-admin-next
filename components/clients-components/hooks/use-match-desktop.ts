@@ -22,7 +22,7 @@ export const useMatchDesktop = () => {
                 window.removeEventListener('resize', checkMatches)
             }
         }
-    })
+    }, [])
 
     return { isNotDesktop: deskScreen }
 }
