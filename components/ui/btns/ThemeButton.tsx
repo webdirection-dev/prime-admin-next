@@ -12,8 +12,14 @@ export default function ThemeButton({ name }: any) {
         let themeLink = document.getElementById('app-theme') as any
 
         if (themeLink) {
-            if (!isThemeLight) themeLink.href = "/themes/md-dark-deeppurple/theme.css"
-            if (isThemeLight) themeLink.href = "/themes/md-light-deeppurple/theme.css"
+            if (!isThemeLight) {
+                themeLink.setAttribute('data-logo', 'white')
+                themeLink.href = "/themes/md-dark-deeppurple/theme.css"
+            }
+            if (isThemeLight) {
+                themeLink.setAttribute('data-logo', 'dark')
+                themeLink.href = "/themes/md-light-deeppurple/theme.css"
+            }
         }
     }, [isThemeLight])
 

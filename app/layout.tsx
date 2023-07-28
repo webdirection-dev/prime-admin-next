@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
     <html lang="en" suppressHydrationWarning={true}>
         <head>
-            <link id="app-theme" href="/themes/md-light-deeppurple/theme.css" rel="stylesheet" />
-            {/* <link id="app-theme" href="/themes/md-dark-deeppurple/theme.css" rel="stylesheet" /> */}
+            <link id="app-theme" data-logo="white" href="/themes/md-light-deeppurple/theme.css" rel="stylesheet" />
+            {/* <link id="app-theme" data-logo="dark" href="/themes/md-dark-deeppurple/theme.css" rel="stylesheet" /> */}
         </head>
 
         <body className='flex flex-column justify-content-between' style={{ minHeight: '100vh' }}>

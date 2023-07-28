@@ -14,7 +14,7 @@ const Footer = () => {
 
     return (
         <footer className='flex flex-column-reverse justify-content-between mr-5 pt-3 lg:flex-row' style={classes}>
-            <p className='text-center text-500 w-full lg:w-4 lg:text-left'>NEXT MGO © {new Date().getFullYear()}</p>
+            <p className='text-center text-500 w-full lg:w-5 lg:text-left'>NEXT MGO © {new Date().getFullYear()}</p>
 
             <Image
                 src={`/img/logo/logo-${!isThemeLight ? 'white' : 'dark'}.svg`}
@@ -24,7 +24,7 @@ const Footer = () => {
                 className='mx-auto mb-2 lg:mb-0'
             />
 
-            <div className='hidden justify-content-end w-full lg:w-4 lg:flex'>
+            <div className='hidden justify-content-end w-full lg:w-5 lg:flex'>
                 <p className='mr-1 text-500'>With </p>
 
                 <i className="pi pi-heart mr-1 text-pink-300" ></i>
