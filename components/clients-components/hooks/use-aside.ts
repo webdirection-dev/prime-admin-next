@@ -1,10 +1,8 @@
-'use client'
-
 import { useAppSelector } from '@/utils/lib/store'
-import { useMatchDesktop } from './hooks/use-match-desktop'
 import { selectMenuInfo } from '@/utils/lib/store/menu-slice'
+import { useMatchDesktop } from './use-match-desktop'
 
-export default function Aside() {
+export const useAside = () => {
     const { isShowMobileAside, isShowAside } = useAppSelector(store => selectMenuInfo(store))
     const { isNotDesktop } = useMatchDesktop()
 
@@ -21,19 +19,15 @@ export default function Aside() {
             left: '0',
             top: '0',
             height: '100vh',
-            borderTopLeftRadius: '0',
-            borderBottomLeftRadius: '0',
+            borderRadius: '0 12px 12px 0',
         } :
         {
             height: 'calc(100vh - 9rem)',
             transform: !isShowAside ? 'translateX(-100%)' : '',
             left: !isShowAside ? '0' : '2rem',
             top: '7rem',
+            borderRadius: '12px',
         }
 
-    return (
-        <aside className={`fixed border-round-xl overflow-y-auto py-2 px-4 z-5`} style={{ ...classes, ...modified }} >
-
-        </aside>
-    )
+    return { classes, modified }
 }

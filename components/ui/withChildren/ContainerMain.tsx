@@ -2,10 +2,10 @@
 
 import { useAppSelector } from '@/utils/lib/store'
 import { selectMenuInfo } from '@/utils/lib/store/menu-slice'
-import { useMatchDesktop } from './hooks/use-match-desktop'
-import { Mask } from './Mask'
+import { useMatchDesktop } from '../../clients-components/hooks/use-match-desktop'
+import { Mask } from '../../clients-components/Mask'
 
-export default function ContainerMain({ children }: any) {
+export default function ContainerMain({ children }: { children: React.ReactNode }) {
     const { isShowAside, isShowMobileAside } = useAppSelector(store => selectMenuInfo(store))
     const { isNotDesktop } = useMatchDesktop()
 

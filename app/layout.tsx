@@ -3,7 +3,7 @@ import "primeicons/primeicons.css"
 import 'primeflex/primeflex.css'
 import '../utils/styles/reset.css'
 import '../utils/styles/globals.css'
-import Providers from '../components/clients-components/Providers'
+import Providers from '../components/ui/withChildren/Providers'
 import { Metadata } from 'next'
 import General from '@/components/servers-components/layouts/General'
 

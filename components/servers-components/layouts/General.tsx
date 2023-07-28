@@ -1,14 +1,14 @@
 import Header from "@/components/servers-components/layouts/Header"
 import Footer from "@/components/servers-components/layouts/Footer"
-import Aside from '../../clients-components/Aside'
-import ContainerMain from '@/components/clients-components/ContainerMain'
+import AsidePage from '../../clients-components/aside/AsidePage'
+import ContainerMain from '@/components/ui/withChildren/ContainerMain'
 
 const General = ({ children }: any) => (
     <>
 
         <Header />
         <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='mt-8'>
-            <Aside />
+            <AsidePage />
             <ContainerMain>
                 {children}
                 <Footer />

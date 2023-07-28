@@ -49,6 +49,10 @@ body {
   background-color: var(--surface-hover);
 }
 
+.p-submenu-header {
+  font-weight: 900 !important;
+}
+
 .logo {
   width: auto;
 }
