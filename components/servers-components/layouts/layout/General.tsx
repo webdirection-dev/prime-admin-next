@@ -1,9 +1,9 @@
-import Header from "@/components/servers-components/layouts/Header"
-import Footer from "@/components/servers-components/layouts/Footer"
-import AsidePage from '../../clients-components/aside/AsidePage'
+import Header from "@/components/servers-components/layouts/layout/Header"
+import Footer from "@/components/servers-components/layouts/layout/Footer"
+import AsidePage from '../../../clients-components/aside/AsidePage'
 import ContainerMain from '@/components/ui/withChildren/ContainerMain'
 
-const General = ({ children }: any) => (
+const General = ({ children }: { children: React.ReactNode }) => (
     <>
 
         <Header />

@@ -5,7 +5,7 @@ import '../utils/styles/reset.css'
 import '../utils/styles/globals.css'
 import Providers from '../components/ui/withChildren/Providers'
 import { Metadata } from 'next'
-import General from '@/components/servers-components/layouts/General'
+import General from '@/components/servers-components/layouts/layout/General'
 
 export const metadata: Metadata = {
     title: {

@@ -1,4 +1,4 @@
-import TopPanel from '@/components/dashboard/TopPanel'
+import TopPanel from '@/components/servers-components/layouts/dashboard/TopPanel'
 
 export default function Home() {
     return (

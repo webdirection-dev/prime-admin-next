@@ -1,5 +1,5 @@
 import { cardsInfo } from '@/utils/helpers/db-local/card-info'
-import Card from '../ui/withChildren/Card'
+import Card from '../../../ui/withChildren/Card'
 import CardInfo from './CardInfo'
 
 export default function TopPanel() {
