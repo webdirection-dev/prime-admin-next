@@ -21,7 +21,7 @@ export default function CalendarButton() {
                 ></i>
 
                 {isShow && (
-                    <div className='absolute z-5' style={{ right: '0', top: '47px' }} >
+                    <div className='absolute z-5 scalein animation-duration-100' style={{ right: '0', top: '47px' }} >
                         <Calendar
                             value={date}
                             onChange={(e: CalendarChangeEvent) => setDate(e.value)}
