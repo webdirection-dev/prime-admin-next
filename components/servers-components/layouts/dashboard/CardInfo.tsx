@@ -3,7 +3,7 @@ export default function CardInfo({ type, data, color, bgColor, icon, details, de
     return (
         <>
             <div className="flex justify-content-between mb-3"><div>
-                <span className="block text-500 font-medium capitalize mb-3">{type}</span>
+                <h3 className="block text-500 font-medium capitalize mb-3">{type}</h3>
                 <div className="text-900 font-medium text-xl">{data}</div>
             </div>
 
@@ -14,9 +14,11 @@ export default function CardInfo({ type, data, color, bgColor, icon, details, de
                 </div>
             </div>
 
-            <span className="text-green-500 font-medium">{details}</span>
-            <span> </span>
-            <span className="text-500">{description}</span>
+            <aside>
+                <span className="text-green-500 font-medium">{details}</span>
+                <span> </span>
+                <span className="text-500">{description}</span>
+            </aside>
         </>
     )
 }

@@ -1,19 +1,19 @@
 import Header from "@/components/servers-components/layouts/layout/Header"
 import Footer from "@/components/servers-components/layouts/layout/Footer"
-import AsidePage from '../../../clients-components/aside/AsidePage'
+import Navbar from '../../../clients-components/navbar/Navbar'
 import ContainerMain from '@/components/ui/withChildren/ContainerMain'
 
-const General = ({ children }: { children: React.ReactNode }) => (
-    <>
-
-        <Header />
-        <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='mt-8'>
-            <AsidePage />
-            <ContainerMain>
-                {children}
-                <Footer />
-            </ContainerMain>
-        </main>
-    </>
-)
-export default General
+export default function General({ children }: { children: React.ReactNode }) {
+    return (
+        <>
+            <Header />
+            <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='pt-8'>
+                <Navbar />
+                <ContainerMain>
+                    {children}
+                    <Footer />
+                </ContainerMain>
+            </main>
+        </>
+    )
+}

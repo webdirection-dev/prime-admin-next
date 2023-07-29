@@ -3,7 +3,7 @@
 import { useAppSelector } from '@/utils/lib/store'
 import { selectMenuInfo } from '@/utils/lib/store/menu-slice'
 import { useMatchDesktop } from '../../clients-components/hooks/use-match-desktop'
-import { Mask } from '../../clients-components/Mask'
+import { Mask } from '../../clients-components/masks/Mask'
 
 export default function ContainerMain({ children }: { children: React.ReactNode }) {
     const { isShowAside, isShowMobileAside } = useAppSelector(store => selectMenuInfo(store))
