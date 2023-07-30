@@ -20,7 +20,7 @@ export default function ThemeButton({ name }: any) {
     return (
         <button
             type="button"
-            className={"btn-header flex-order-2 rounded-full flex-order-0 ml-auto lg:flex-order-1 lg:ml-4"}
+            className={"btn-header flex-order-2 rounded-full flex-order-0 ml-auto lg:flex-order-1 lg:ml-3"}
             onClick={() => dispatch(setIsLightTheme())}
         >
             {''}<i className={`pi pi-${isThemeLight ? 'moon' : 'sun'}`} style={{ fontSize: '1.5rem' }}></i>

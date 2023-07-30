@@ -1,9 +1,9 @@
 'use client'
 
-import HeaderButton from './HeaderButton'
 import { useMatchDesktop } from '@/components/clients-components/hooks/use-match-desktop'
 import { useActiveBar } from './hooks/use-active-bar'
 import CalendarButton from './CalendarButton'
+import LanguageButton from './LanguageButton'
 
 export default function ActiveBarButton() {
     const { isNotDesktop } = useMatchDesktop()
@@ -37,10 +37,8 @@ export default function ActiveBarButton() {
 
             {!isNotDesktop && (
                 <ul className='flex justify-content-between align-items-center ml-auto'>
-                    <li> <CalendarButton /> </li>
-                    <li> <HeaderButton name={'user'} /> </li>
-                    {/* <li> <HeaderButton name={'calendar'} /> </li> */}
-                    {/* <li> <HeaderButton name={'cog'} /> </li> */}
+                    <li className='ml-3'><LanguageButton /></li>
+                    <li className='ml-3'><CalendarButton /></li>
                 </ul>
             )}
         </>
