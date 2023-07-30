@@ -6,6 +6,7 @@ import { MenuItem } from 'primereact/menuitem'
 
 export const useBtnLanguage = () => {
   const menuRight = useRef<Menu>(null)
+  const [language, setLanguage] = useState('English (US)')
   const [isShow, setIsShow] = useState(false)
 
   const styles = isShow ? {
@@ -20,7 +21,7 @@ export const useBtnLanguage = () => {
       icon: 'p-menuitem-icon pi pi-fw pi-heart',
       command: () => {
         setIsShow(false)
-        console.log('Add New')
+        setLanguage('English (US)')
       },
     },
     {
@@ -28,7 +29,7 @@ export const useBtnLanguage = () => {
       icon: 'p-menuitem-icon pi pi-fw pi-star',
       command: () => {
         setIsShow(false)
-        console.log('Remove')
+        setLanguage('Deutsch')
       },
     },
   ]
@@ -49,5 +50,5 @@ export const useBtnLanguage = () => {
     }
   }, [isShow])
 
-  return { Menu, menuRight, items, styles }
+  return { Menu, menuRight, items, styles, language }
 }
