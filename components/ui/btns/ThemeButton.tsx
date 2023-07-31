@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/utils/lib/store'
 import { selectMenuInfo, setIsLightTheme } from '@/utils/lib/store/menu-slice'
 import { useEffect } from 'react'
 
-export default function ThemeButton({ name }: any) {
+export default function ThemeButton() {
     const dispatch = useAppDispatch()
     const { isThemeLight } = useAppSelector(store => selectMenuInfo(store))
 
