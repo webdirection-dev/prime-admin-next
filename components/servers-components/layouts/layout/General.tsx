@@ -7,16 +7,14 @@ import { Locale } from '@/i18n.config'
 export default function General({ children, lang }: { children: React.ReactNode, lang: Locale }) {
     return (
         <>
-            {children}
-
             <Header lang={lang} />
-            {/* <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='pt-8'>
+            <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='pt-8'>
                 <Navbar />
                 <ContainerMain>
                     {children}
                     <Footer />
                 </ContainerMain>
-            </main> */}
+            </main>
         </>
     )
 }
