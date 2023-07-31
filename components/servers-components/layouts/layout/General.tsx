@@ -8,15 +8,13 @@ export default function General({ children }: { children: React.ReactNode }) {
     return (
         <>
             <Header />
-            {children}
-
-            {/* <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='pt-8'>
+            <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='pt-8'>
                 <Navbar />
                 <ContainerMain>
                     {children}
                     <Footer />
                 </ContainerMain>
-            </main> */}
+            </main>
         </>
     )
 }

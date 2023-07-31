@@ -19,7 +19,7 @@ export default async function Header() {
             <Logo />
             <LeftBarButton />
             <ThemeButton />
-            {/* <ActiveBarButton lang={lang} activeBar={activeBar} /> */}
+            <ActiveBarButton />
         </header>
     )
 }
