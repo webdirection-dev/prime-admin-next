@@ -51,7 +51,8 @@ export function middleware(request: NextRequest) {
     const isTheme =
         pathname.endsWith('.svg') ||
         pathname.endsWith('.woff') ||
-        pathname.endsWith('.woff2')
+        pathname.endsWith('.woff2') ||
+        pathname.endsWith('.theme.css')
 
     const pathnameIsMissingLocale = i18n.locales.every(
         locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
