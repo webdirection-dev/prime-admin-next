@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children, params }: { children: React.ReactNode, params: { lang: Locale } }) => (
     <html lang={params.lang} suppressHydrationWarning={true}>
         <head>
-            {/* <link id="app-theme" href="/en/themes/md-light-deeppurple/theme.css" rel="stylesheet" /> */}
+            {/* <link id="app-theme" href="/themes/md-light-deeppurple/theme.css" rel="stylesheet" /> */}
             <link id="app-theme" href={"/themes/md-dark-deeppurple/theme.css"} rel="stylesheet" />
         </head>
 
