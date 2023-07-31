@@ -46,31 +46,28 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export function middleware(request: NextRequest) {
-    const pathname = request.nextUrl.pathname
+    // const pathname = request.nextUrl.pathname
 
-    const isTheme =
-        pathname.endsWith('.svg') ||
-        pathname.endsWith('.woff') ||
-        pathname.endsWith('.woff2') ||
-        pathname.endsWith('.theme.css')
+    // const isTheme =
+    //     pathname.endsWith('.svg')
 
-    const pathnameIsMissingLocale = i18n.locales.every(
-        locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-    )
+    // const pathnameIsMissingLocale = i18n.locales.every(
+    //     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    // )
 
-    // Redirect if there is no locale
-    if (!isTheme && pathnameIsMissingLocale) {
-        const locale = getLocale(request)
-        return NextResponse.redirect(
-            new URL(
-                `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-                request.url
-            )
-        )
-    }
+    // // Redirect if there is no locale
+    // if (!isTheme && pathnameIsMissingLocale) {
+    //     const locale = getLocale(request)
+    //     return NextResponse.redirect(
+    //         new URL(
+    //             `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+    //             request.url
+    //         )
+    //     )
+    // }
 }
 
 export const config = {
     // Matcher ignoring `/_next/` and `/api/`
-    matcher: ['/((?!api|_next/static|_next/img|favicon.ico).*)']
+    // matcher: ['/((?!api|_next/static|_next/img|favicon.ico).*)']
 }
