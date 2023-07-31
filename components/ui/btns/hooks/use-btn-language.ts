@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Menu } from 'primereact/menu'
 import { MenuItem } from 'primereact/menuitem'
 import { usePathname } from 'next/navigation'
-import { i18n } from '@/i18n.config'
 
 export const useBtnLanguage = () => {
     const pathName = usePathname()
@@ -28,7 +27,7 @@ export const useBtnLanguage = () => {
         {
             label: 'English (US)',
             icon: 'p-menuitem-icon pi pi-fw pi-heart',
-            url: redirectedPathName(i18n.locales[0]),
+            url: redirectedPathName('en'),
             command: () => {
                 setIsShow(false)
             },
@@ -36,7 +35,7 @@ export const useBtnLanguage = () => {
         {
             label: 'Deutsch',
             icon: 'p-menuitem-icon pi pi-fw pi-star',
-            url: redirectedPathName(i18n.locales[1]),
+            url: redirectedPathName('de'),
             command: () => {
                 setIsShow(false)
             },

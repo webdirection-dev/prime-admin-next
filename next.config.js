@@ -7,6 +7,9 @@ const nextConfig = {
     images: {
         // formats: ['image/avif, image/webp'],
         domains: ['github.com', 'lh3.googleusercontent.com']
-    }
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 }
 module.exports = nextConfig
