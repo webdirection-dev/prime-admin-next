@@ -46,29 +46,29 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export function middleware(request: NextRequest) {
-    const pathname = request.nextUrl.pathname
+    // const pathname = request.nextUrl.pathname
 
-    const isTheme =
-        pathname.endsWith('/theme.css') ||
-        pathname.endsWith('.svg') ||
-        pathname.endsWith('.ff') ||
-        pathname.endsWith('.woff') ||
-        pathname.endsWith('.woff2')
+    // const isTheme =
+    //     pathname.endsWith('/theme.css') ||
+    //     pathname.endsWith('.svg') ||
+    //     pathname.endsWith('.ff') ||
+    //     pathname.endsWith('.woff') ||
+    //     pathname.endsWith('.woff2')
 
-    const pathnameIsMissingLocale = i18n.locales.every(
-        locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-    )
+    // const pathnameIsMissingLocale = i18n.locales.every(
+    //     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    // )
 
-    // Redirect if there is no locale
-    if (!isTheme && pathnameIsMissingLocale) {
-        const locale = getLocale(request)
-        return NextResponse.redirect(
-            new URL(
-                `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-                request.url
-            )
-        )
-    }
+    // // Redirect if there is no locale
+    // if (!isTheme && pathnameIsMissingLocale) {
+    //     const locale = getLocale(request)
+    //     return NextResponse.redirect(
+    //         new URL(
+    //             `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+    //             request.url
+    //         )
+    //     )
+    // }
 }
 
 export const config = {
