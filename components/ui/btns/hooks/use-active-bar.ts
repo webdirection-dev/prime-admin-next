@@ -12,10 +12,10 @@ export const useActiveBar = (txt: any, lang: string) => {
 
     const items: MenuItem[] = [
         {
-            label: options.label,
+            label: 'options.label',
             items: [
                 {
-                    label: options.update.label,
+                    label: 'options.update.label',
                     icon: 'pi pi-refresh',
                     command: () => {
                         toast.current?.show({
@@ -41,10 +41,10 @@ export const useActiveBar = (txt: any, lang: string) => {
             ],
         },
         {
-            label: navigate.label,
+            label: 'navigate.label',
             items: [
                 {
-                    label: navigate.navigate.label,
+                    label: 'navigate.navigate.label',
                     icon: 'pi pi-external-link',
                     url: 'https://reactjs.org/',
                 },
