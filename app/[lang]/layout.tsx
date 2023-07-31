@@ -9,8 +9,13 @@ import General from '@/components/servers-components/layouts/layout/General'
 import { Locale, i18n } from '@/i18n.config'
 import { Metadata } from 'next'
 
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+import { Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+    subsets: ['latin'],
+    weight: ["100", "300", "400", "500", "700", "900"],
+    style: 'normal',
+})
 
 export async function generateStaticParams() {
     return i18n.locales.map(locale => ({ lang: locale }))
@@ -31,7 +36,7 @@ const RootLayout = ({ children, params }: { children: React.ReactNode, params: {
             <link id="app-theme" href="/themes/md-dark-deeppurple/theme.css" rel="stylesheet" />
         </head>
 
-        <body className={inter.className + ' flex flex-column justify-content-between'} style={{ minHeight: '100vh' }}>
+        <body className={roboto.className + ' flex flex-column justify-content-between'} style={{ minHeight: '100vh' }}>
             <Providers>
                 <General lang={params.lang}>
                     {children}
