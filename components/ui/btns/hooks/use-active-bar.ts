@@ -3,9 +3,7 @@ import { MenuItem } from 'primereact/menuitem'
 import { Menu } from 'primereact/menu'
 import { Toast } from 'primereact/toast'
 
-export const useActiveBar = (txt: any, lang: string) => {
-    const { options, navigate } = txt
-    const title = lang === 'en' ? 'English (US)' : 'Deutsch'
+export const useActiveBar = () => {
     const menuRight = useRef<Menu>(null)
     const toast = useRef<Toast>(null)
 
@@ -20,20 +18,20 @@ export const useActiveBar = (txt: any, lang: string) => {
                     command: () => {
                         toast.current?.show({
                             severity: 'success',
-                            summary: options.update.summary,
-                            detail: options.update.details,
+                            summary: 'options.update.summary',
+                            detail: 'options.update.details',
                             life: 3000,
                         })
                     },
                 },
                 {
-                    label: options.delete.label,
+                    label: 'options.delete.label',
                     icon: 'pi pi-times',
                     command: () => {
                         toast.current?.show({
                             severity: 'warn',
-                            summary: options.delete.summary,
-                            detail: options.delete.details,
+                            summary: 'options.delete.summary',
+                            detail: 'options.delete.details',
                             life: 3000,
                         })
                     },
@@ -49,7 +47,7 @@ export const useActiveBar = (txt: any, lang: string) => {
                     url: 'https://reactjs.org/',
                 },
                 {
-                    label: navigate.router.label,
+                    label: 'navigate.router.label',
                     icon: 'pi pi-upload',
                     command: (e) => {
                         //router.push('/fileupload');
@@ -59,5 +57,71 @@ export const useActiveBar = (txt: any, lang: string) => {
         },
     ]
 
-    return { Menu, Toast, toast, menuRight, items, title }
+    return { Menu, Toast, toast, menuRight, items, title: 'test' }
 }
+
+
+
+// import { useRef } from 'react'
+// import { MenuItem } from 'primereact/menuitem'
+// import { Menu } from 'primereact/menu'
+// import { Toast } from 'primereact/toast'
+
+// export const useActiveBar = (txt: any, lang: string) => {
+//     const { options, navigate } = txt
+//     const title = lang === 'en' ? 'English (US)' : 'Deutsch'
+//     const menuRight = useRef<Menu>(null)
+//     const toast = useRef<Toast>(null)
+
+
+//     const items: MenuItem[] = [
+//         {
+//             label: 'options.label',
+//             items: [
+//                 {
+//                     label: 'options.update.label',
+//                     icon: 'pi pi-refresh',
+//                     command: () => {
+//                         toast.current?.show({
+//                             severity: 'success',
+//                             summary: options.update.summary,
+//                             detail: options.update.details,
+//                             life: 3000,
+//                         })
+//                     },
+//                 },
+//                 {
+//                     label: options.delete.label,
+//                     icon: 'pi pi-times',
+//                     command: () => {
+//                         toast.current?.show({
+//                             severity: 'warn',
+//                             summary: options.delete.summary,
+//                             detail: options.delete.details,
+//                             life: 3000,
+//                         })
+//                     },
+//                 }
+//             ],
+//         },
+//         {
+//             label: 'navigate.label',
+//             items: [
+//                 {
+//                     label: 'navigate.navigate.label',
+//                     icon: 'pi pi-external-link',
+//                     url: 'https://reactjs.org/',
+//                 },
+//                 {
+//                     label: navigate.router.label,
+//                     icon: 'pi pi-upload',
+//                     command: (e) => {
+//                         //router.push('/fileupload');
+//                     },
+//                 },
+//             ],
+//         },
+//     ]
+
+//     return { Menu, Toast, toast, menuRight, items, title }
+// }

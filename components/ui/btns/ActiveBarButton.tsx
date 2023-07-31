@@ -7,7 +7,7 @@ import LanguageButton from './LanguageButton'
 
 export default function ActiveBarButton({ lang, txt }: any) {
     const { isNotDesktop } = useMatchDesktop()
-    const { Menu, Toast, toast, menuRight, items, title } = useActiveBar(txt, lang)
+    const { Menu, Toast, toast, menuRight, items, title } = useActiveBar()
 
 
     return (
