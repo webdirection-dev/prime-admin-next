@@ -6,6 +6,7 @@ import CalendarButton from './CalendarButton'
 import LanguageButton from './LanguageButton'
 
 export default function ActiveBarButton({ activeBar, lang }: any) {
+    const title = lang === 'en' ? 'English (US)' : 'Deutsch'
     const { isNotDesktop } = useMatchDesktop()
     const { Menu, Toast, toast, menuRight, items } = useActiveBar(activeBar)
 
@@ -37,7 +38,7 @@ export default function ActiveBarButton({ activeBar, lang }: any) {
 
             {!isNotDesktop && (
                 <ul className='flex justify-content-between align-items-center ml-auto'>
-                    <li className='ml-3'><LanguageButton lang={lang} /></li>
+                    <li className='ml-3'><LanguageButton title={title} /></li>
                     <li className='ml-3'><CalendarButton /></li>
                 </ul>
             )}
