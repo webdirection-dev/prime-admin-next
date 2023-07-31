@@ -29,7 +29,7 @@ const RootLayout = ({ children, params }: { children: React.ReactNode, params: {
     <html lang={params.lang} suppressHydrationWarning={true}>
         <head>
             {/* <link id="app-theme" href="/en/themes/md-light-deeppurple/theme.css" rel="stylesheet" /> */}
-            <link id="app-theme" href="/en/themes/md-dark-deeppurple/theme.css" rel="stylesheet" />
+            <link id="app-theme" href={"/" + params.lang + "/themes/md-dark-deeppurple/theme.css"} rel="stylesheet" />
         </head>
 
         <body className={roboto.className + ' flex flex-column justify-content-between'} style={{ minHeight: '100vh' }}>
