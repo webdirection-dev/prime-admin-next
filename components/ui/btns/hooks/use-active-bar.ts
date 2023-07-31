@@ -3,8 +3,9 @@ import { MenuItem } from 'primereact/menuitem'
 import { Menu } from 'primereact/menu'
 import { Toast } from 'primereact/toast'
 
-export const useActiveBar = (activeBar: any) => {
-    const { options, navigate } = activeBar
+export const useActiveBar = (txt: any, lang: string) => {
+    const { options, navigate } = txt
+    const title = lang === 'en' ? 'English (US)' : 'Deutsch'
     const menuRight = useRef<Menu>(null)
     const toast = useRef<Toast>(null)
 
@@ -58,5 +59,5 @@ export const useActiveBar = (activeBar: any) => {
         },
     ]
 
-    return { Menu, Toast, toast, menuRight, items }
+    return { Menu, Toast, toast, menuRight, items, title }
 }

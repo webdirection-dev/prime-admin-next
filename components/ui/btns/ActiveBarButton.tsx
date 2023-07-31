@@ -5,10 +5,10 @@ import { useActiveBar } from './hooks/use-active-bar'
 import CalendarButton from './CalendarButton'
 import LanguageButton from './LanguageButton'
 
-export default function ActiveBarButton({ activeBar, lang }: any) {
-    const title = lang === 'en' ? 'English (US)' : 'Deutsch'
+export default function ActiveBarButton({ lang, txt }: any) {
     const { isNotDesktop } = useMatchDesktop()
-    const { Menu, Toast, toast, menuRight, items } = useActiveBar(activeBar)
+    const { Menu, Toast, toast, menuRight, items, title } = useActiveBar(txt, lang)
+
 
     return (
         <>
