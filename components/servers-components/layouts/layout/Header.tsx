@@ -3,8 +3,7 @@ import Logo from '@/components/ui/Logo'
 import ThemeButton from '@/components/ui/btns/ThemeButton'
 import ActiveBarButton from '@/components/ui/btns/ActiveBarButton'
 import { Locale } from '@/i18n.config'
-import { test } from '@/utils/language/dictionaries/test'
-// import { getDictionary } from '@/utils/language/dictionary'
+import { getDictionary } from '@/utils/language/dictionary'
 
 export default async function Header() {
 
@@ -20,7 +19,6 @@ export default async function Header() {
             <Logo />
             <LeftBarButton />
             <ThemeButton />
-            <ActiveBarButton />
             {/* <ActiveBarButton lang={lang} activeBar={activeBar} /> */}
         </header>
     )
