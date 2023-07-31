@@ -48,7 +48,10 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname
 
-    const isTheme = pathname.endsWith('.svg')
+    const isTheme =
+        pathname.endsWith('.svg') ||
+        pathname.endsWith('.woff') ||
+        pathname.endsWith('.woff2')
 
     const pathnameIsMissingLocale = i18n.locales.every(
         locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
