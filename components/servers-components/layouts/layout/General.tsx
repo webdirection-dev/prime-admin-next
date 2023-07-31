@@ -8,8 +8,6 @@ export default function General({ children, lang }: { children: React.ReactNode,
     return (
         <>
             <Header lang={lang} />
-            {children}
-
             <main style={{ minHeight: 'calc(100vh - 7rem)' }} className='pt-8'>
                 <Navbar />
                 <ContainerMain>
