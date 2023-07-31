@@ -4,6 +4,7 @@ import ThemeButton from '@/components/ui/btns/ThemeButton'
 import ActiveBarButton from '@/components/ui/btns/ActiveBarButton'
 import { Locale } from '@/i18n.config'
 import { test } from '@/utils/language/dictionaries/test'
+import Test from '@/components/Test'
 // import { getDictionary } from '@/utils/language/dictionary'
 
 export default async function Header() {
@@ -18,6 +19,7 @@ export default async function Header() {
             }}
         >
             <Logo />
+            <Test />
             <LeftBarButton />
             <ThemeButton />
             <ActiveBarButton />

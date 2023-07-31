@@ -3,13 +3,13 @@ import { getDictionary } from '@/utils/language/dictionary'
 import TopPanel from '@/components/servers-components/layouts/dashboard/TopPanel'
 import { CardTitle } from '@/components/ui/CardTitle'
 import Card from '@/components/ui/withChildren/Card'
+import Test from '@/components/Test'
 
-export default async function Home() {
+export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+    const { tiles, btnTile }: any = await getDictionary(lang)
 
     return (
-        <div className='grid mr-5'>
-            Test
-        </div>
+        <h1>Test</h1>
     )
 }
 
