@@ -5,21 +5,21 @@ import { Menu } from 'primereact/menu'
 import { MenuItem } from 'primereact/menuitem'
 
 
-export const useBtnCard = () => {
+export const useBtnCard = (btnTile: any) => {
     const menuLeft = useRef<Menu>(null)
     const items: MenuItem[] = [
         {
-            label: 'Add New',
+            label: btnTile.add.title,
             icon: 'p-menuitem-icon pi pi-fw pi-plus',
             command: () => {
-                console.log('Add New')
+                // console.log('Add New')
             },
         },
         {
-            label: 'Remove',
+            label: btnTile.remove.title,
             icon: 'p-menuitem-icon pi pi-fw pi-minus',
             command: () => {
-                console.log('Remove')
+                // console.log('Remove')
             },
         },
     ]

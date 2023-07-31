@@ -27,7 +27,7 @@ const Footer = () => {
             <div className='hidden justify-content-end w-full lg:w-5 lg:flex'>
                 <p className='mr-1 text-500'>With </p>
 
-                <i className="pi pi-heart mr-1 text-pink-300" ></i>
+                <i className="pi pi-heart mr-1 text-pink-300" style={{ paddingTop: '2.5px' }}></i>
 
                 <p className='mr-1 text-500'> by</p>
                 <Link

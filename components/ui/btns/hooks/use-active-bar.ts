@@ -3,49 +3,52 @@ import { MenuItem } from 'primereact/menuitem'
 import { Menu } from 'primereact/menu'
 import { Toast } from 'primereact/toast'
 
-export const useActiveBar = () => {
+export const useActiveBar = (activeBar: any) => {
+    const { options, navigate } = activeBar
     const menuRight = useRef<Menu>(null)
     const toast = useRef<Toast>(null)
+
+
     const items: MenuItem[] = [
         {
-            label: 'Options',
+            label: options.label,
             items: [
                 {
-                    label: 'Update',
+                    label: options.update.label,
                     icon: 'pi pi-refresh',
                     command: () => {
                         toast.current?.show({
                             severity: 'success',
-                            summary: 'Updated',
-                            detail: 'Data Updated',
+                            summary: options.update.summary,
+                            detail: options.update.details,
                             life: 3000,
                         })
                     },
                 },
                 {
-                    label: 'Delete',
+                    label: options.delete.label,
                     icon: 'pi pi-times',
                     command: () => {
                         toast.current?.show({
                             severity: 'warn',
-                            summary: 'Delete',
-                            detail: 'Data Deleted',
+                            summary: options.delete.summary,
+                            detail: options.delete.details,
                             life: 3000,
                         })
                     },
-                },
+                }
             ],
         },
         {
-            label: 'Navigate',
+            label: navigate.label,
             items: [
                 {
-                    label: 'React Website',
+                    label: navigate.navigate.label,
                     icon: 'pi pi-external-link',
                     url: 'https://reactjs.org/',
                 },
                 {
-                    label: 'Router',
+                    label: navigate.router.label,
                     icon: 'pi pi-upload',
                     command: (e) => {
                         //router.push('/fileupload');

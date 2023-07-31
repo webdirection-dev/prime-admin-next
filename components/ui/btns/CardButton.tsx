@@ -2,8 +2,8 @@
 
 import { useBtnCard } from './hooks/use-btn-card'
 
-export default function CardButton({ btn }: any) {
-    const { Menu, menuLeft, items } = useBtnCard()
+export default function CardButton({ btn, btnTile }: any) {
+    const { Menu, menuLeft, items } = useBtnCard(btnTile)
     return (
         <>
             <button

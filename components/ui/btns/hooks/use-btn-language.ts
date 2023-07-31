@@ -3,52 +3,61 @@
 import { useEffect, useRef, useState } from 'react'
 import { Menu } from 'primereact/menu'
 import { MenuItem } from 'primereact/menuitem'
+import { usePathname } from 'next/navigation'
+import { i18n } from '@/i18n.config'
 
 export const useBtnLanguage = () => {
-  const menuRight = useRef<Menu>(null)
-  const [language, setLanguage] = useState('English (US)')
-  const [isShow, setIsShow] = useState(false)
+    const pathName = usePathname()
+    const menuRight = useRef<Menu>(null)
+    const [isShow, setIsShow] = useState(false)
 
-  const styles = isShow ? {
-    outline: '0 none',
-    outlineOffset: '0',
-    boxShadow: '0 0 0 0.2rem #C7D2FE',
-  } : {}
+    const styles = isShow ? {
+        outline: '0 none',
+        outlineOffset: '0',
+        boxShadow: '0 0 0 0.2rem #C7D2FE',
+    } : {}
 
-  const items: MenuItem[] = [
-    {
-      label: 'English (US)',
-      icon: 'p-menuitem-icon pi pi-fw pi-heart',
-      command: () => {
-        setIsShow(false)
-        setLanguage('English (US)')
-      },
-    },
-    {
-      label: 'Deutsch',
-      icon: 'p-menuitem-icon pi pi-fw pi-star',
-      command: () => {
-        setIsShow(false)
-        setLanguage('Deutsch')
-      },
-    },
-  ]
-
-  useEffect(() => {
-    const checkElement = (e: any) => {
-      const btn = document.getElementById('lang')?.contains(e.target)
-      const menu = document.getElementById('menu-lang')?.contains(e.target)
-      if (btn) setIsShow(!isShow)
-      if (!btn) setIsShow(false)
-      if (!btn && menu && isShow) setIsShow(true)
+    const redirectedPathName = (locale: string) => {
+        if (!pathName) return '/'
+        const segments = pathName.split('/')
+        segments[1] = locale
+        return segments.join('/')
     }
 
-    document.addEventListener('click', checkElement)
+    const items: MenuItem[] = [
+        {
+            label: 'English (US)',
+            icon: 'p-menuitem-icon pi pi-fw pi-heart',
+            url: redirectedPathName(i18n.locales[0]),
+            command: () => {
+                setIsShow(false)
+            },
+        },
+        {
+            label: 'Deutsch',
+            icon: 'p-menuitem-icon pi pi-fw pi-star',
+            url: redirectedPathName(i18n.locales[1]),
+            command: () => {
+                setIsShow(false)
+            },
+        },
+    ]
 
-    return () => {
-      document.removeEventListener('click', checkElement)
-    }
-  }, [isShow])
+    useEffect(() => {
+        const checkElement = (e: any) => {
+            const btn = document.getElementById('lang')?.contains(e.target)
+            const menu = document.getElementById('menu-lang')?.contains(e.target)
+            if (btn) setIsShow(!isShow)
+            if (!btn) setIsShow(false)
+            if (!btn && menu && isShow) setIsShow(true)
+        }
 
-  return { Menu, menuRight, items, styles, language }
+        document.addEventListener('click', checkElement)
+
+        return () => {
+            document.removeEventListener('click', checkElement)
+        }
+    }, [isShow])
+
+    return { Menu, menuRight, items, styles }
 }

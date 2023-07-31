@@ -1,6 +1,6 @@
 import CardButton from './btns/CardButton'
 
-export const CardTitle = ({ title, btn = false }: any) => {
+export const CardTitle = ({ title, btn = false, btnTile }: any) => {
     return (
         <div className='flex justify-content-between align-items-center mb-5'>
             <h5
@@ -10,7 +10,7 @@ export const CardTitle = ({ title, btn = false }: any) => {
 
 
             {btn && (
-                <CardButton handlerClick={btn} />
+                <CardButton handlerClick={btn} btnTile={btnTile} />
             )}
         </div>
     )
