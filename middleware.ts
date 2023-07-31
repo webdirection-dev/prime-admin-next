@@ -51,6 +51,7 @@ export function middleware(request: NextRequest) {
     const isTheme =
         pathname.endsWith('/theme.css') ||
         pathname.endsWith('.svg') ||
+        pathname.endsWith('.ff') ||
         pathname.endsWith('.woff') ||
         pathname.endsWith('.woff2')
 
