@@ -48,18 +48,9 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname
 
-    // const lostFF = pathname.split('?')[0].endsWith('/ff')
-    // console.log(pathname.split('?'))
-    // console.log(pathname.split('?')[0])
-    // console.log(lostFF)
-
-
     const isTheme =
         pathname.endsWith('.svg') ||
         pathname.endsWith('/ff')
-    // pathname.endsWith('/theme.css') ||
-    // pathname.endsWith('.woff') ||
-    // pathname.endsWith('.woff2')
 
     const pathnameIsMissingLocale = i18n.locales.every(
         locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
