@@ -3,12 +3,16 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
+  /* font-family: var(--font-family); */
   color: var(--text-color);
   background-color: var(--surface-ground);
   min-height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 [data-part='decrement-trigger'],

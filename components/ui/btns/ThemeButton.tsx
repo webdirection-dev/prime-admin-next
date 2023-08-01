@@ -2,19 +2,15 @@
 
 import { useAppDispatch, useAppSelector } from '@/utils/lib/store'
 import { selectMenuInfo, setIsLightTheme } from '@/utils/lib/store/menu-slice'
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 
 export default function ThemeButton() {
     const dispatch = useAppDispatch()
     const { isThemeLight } = useAppSelector(store => selectMenuInfo(store))
 
-    useEffect(() => {
-        let themeLink = document.getElementById('app-theme') as any
-
-        if (themeLink) {
-            if (!isThemeLight) themeLink.href = "/themes/md-dark-deeppurple/theme.css"
-            if (isThemeLight) themeLink.href = "/themes/md-light-deeppurple/theme.css"
-        }
+    useLayoutEffect(() => {
+        isThemeLight && document.documentElement.setAttribute("data-theme", "light")
+        !isThemeLight && document.documentElement.setAttribute("data-theme", "dark")
     }, [isThemeLight])
 
     return (

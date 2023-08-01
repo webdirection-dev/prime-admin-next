@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from './index'
 
 const initialState: any = {
-    isThemeLight: false,
+    isThemeLight: null,
     // isThemeLight: true,
     isShowAside: true,
     isShowMobileAside: false,
