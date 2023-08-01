@@ -1,12 +1,12 @@
 'use client'
 
 import { useAppSelector } from '@/utils/lib/store'
-import { selectMenuInfo } from '@/utils/lib/store/menu-slice'
+import { selectTheme } from '@/utils/lib/store/theme-slice'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Logo() {
-    const { isThemeLight } = useAppSelector(store => selectMenuInfo(store))
+    const { theme } = useAppSelector(store => selectTheme(store))
     return (
         <Link
             href='/'
@@ -14,7 +14,7 @@ export default function Logo() {
             style={{ color: 'var(--surface-900)' }}
         >
             <Image
-                src={`/img/logo/logo-${!isThemeLight ? 'white' : 'dark'}.svg`}
+                src={`/img/logo/logo-${theme !== 'light' ? 'white' : 'dark'}.svg`}
                 width={47}
                 height={35}
                 alt="logo"

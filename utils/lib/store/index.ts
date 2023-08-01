@@ -1,9 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit'
+import { themeReducer } from './theme-slice'
 import { menuReducer } from './menu-slice'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { configureStore } from "@reduxjs/toolkit"
 
 const rootReducer = combineReducers({
+    themeReducer,
     menuReducer,
 })
 

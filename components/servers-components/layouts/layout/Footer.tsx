@@ -3,10 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useAppSelector } from '@/utils/lib/store'
-import { selectMenuInfo } from '@/utils/lib/store/menu-slice'
+import { selectTheme } from '@/utils/lib/store/theme-slice'
 
 const Footer = () => {
-    const { isThemeLight } = useAppSelector(store => selectMenuInfo(store))
+    const { theme } = useAppSelector(store => selectTheme(store))
+
 
     const classes = {
         borderTop: '1px solid var(--surface-border)',
@@ -17,7 +18,7 @@ const Footer = () => {
             <p className='text-center text-500 w-full lg:w-5 lg:text-left'>NEXT MGO © {new Date().getFullYear()}</p>
 
             <Image
-                src={`/img/logo/logo-${!isThemeLight ? 'white' : 'dark'}.svg`}
+                src={`/img/logo/logo-${theme !== 'light' ? 'white' : 'dark'}.svg`}
                 width={27}
                 height={20}
                 alt="logo"
