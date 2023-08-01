@@ -1,4 +1,3 @@
-import { cardsInfo } from '@/utils/db-local/card-info'
 import Card from '../../../ui/withChildren/Card'
 import CardInfo from './CardInfo'
 

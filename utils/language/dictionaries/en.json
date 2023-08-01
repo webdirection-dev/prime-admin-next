@@ -23,6 +23,11 @@
             }
         }
     },
+    "theme": {
+        "system": "System",
+        "dark": "Dark",
+        "light": "Light"
+    },
     "tiles": {
         "tile": [
             {

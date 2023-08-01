@@ -6,7 +6,7 @@ import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/utils/language/dictionary'
 
 export default async function Header({ lang }: { lang: Locale }) {
-    const { activeBar } = await getDictionary(lang)
+    const { activeBar, theme } = await getDictionary(lang)
 
     return (
         <header
@@ -19,7 +19,7 @@ export default async function Header({ lang }: { lang: Locale }) {
         >
             <Logo />
             <LeftBarButton />
-            <ThemeButton />
+            <ThemeButton theme={theme} />
             <ActiveBarButton lang={lang} activeBar={activeBar} />
         </header>
     )

@@ -2,8 +2,8 @@
 
 import { useBtnTheme } from './hooks/use-btn-theme'
 
-export default function ThemeButton() {
-    const { Menu, menuRight, items, mode } = useBtnTheme()
+export default function ThemeButton({ theme }: any) {
+    const { Menu, menuRight, items, icon } = useBtnTheme(theme)
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function ThemeButton() {
                 aria-haspopup
                 onClick={(event) => menuRight.current?.toggle(event)}
             >
-                {''}<i className={`pi pi-${mode && mode === 'light' ? 'moon' : 'sun'}`} style={{ fontSize: '1.5rem' }}></i>
+                {''}<i className={`pi pi-${icon}`} style={{ fontSize: '1.5rem' }}></i>
             </button>
 
             <Menu

@@ -23,6 +23,11 @@
             }
         }
     },
+    "theme": {
+        "system": "System",
+        "dark": "Dunkel",
+        "light": "Licht"
+    },
     "tiles": {
         "tile": [
             {
@@ -54,7 +59,7 @@
             },
             {
                 "type": "kommentare",
-                "data": "152 Unread",
+                "data": "152 Ungelesen",
                 "icon": "pi-comment",
                 "color": "purple-500",
                 "bgColor": "purple-100",

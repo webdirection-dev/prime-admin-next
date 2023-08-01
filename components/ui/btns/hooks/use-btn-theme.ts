@@ -1,49 +1,60 @@
 'use client'
 
 import { useLayoutEffect, useRef, useState, useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '@/utils/lib/store'
+import { useAppDispatch } from '@/utils/lib/store'
 import { Menu } from 'primereact/menu'
 import { MenuItem } from 'primereact/menuitem'
-import { selectTheme, setTheme } from '@/utils/lib/store/theme-slice'
+import { setTheme } from '@/utils/lib/store/theme-slice'
+import Cookies from 'js-cookie'
 
+const initialIsUse = Cookies.get('useSystem') ? JSON.parse(Cookies.get('useSystem') as string) : true
+const initialSystemMode = Cookies.get('systemMode') ? JSON.parse(Cookies.get('systemMode') as string) : null
+const initialMode = Cookies.get('mode') ? JSON.parse(Cookies.get('mode') as string) : null
 
-
-export const useBtnTheme = () => {
+export const useBtnTheme = (theme: any) => {
     const dispatch = useAppDispatch()
     const menuRight = useRef<Menu>(null)
-    const [mode, setMode] = useState<any>(null)
-    const [systemMode, setSystemMode] = useState<any>(null)
-    const [isUseSystemMode, setIsUseSystemMode] = useState(true)
+    const [isUseSystemMode, setIsUseSystemMode] = useState(initialIsUse)
+    const [systemMode, setSystemMode] = useState<any>(initialSystemMode)
+    const [mode, setMode] = useState<any>(initialMode)
+    const [icon, setIcon] = useState('')
 
     const items: MenuItem[] = [
         {
-            label: 'Dark',
+            label: theme.system,
+            icon: `p-menuitem-icon pi pi-fw pi-cog ${isUseSystemMode && 'text-orange-500'}`,
+            command: () => {
+                Cookies.set('useSystem', JSON.stringify(true))
+                Cookies.set('mode', JSON.stringify(null))
+                setIsUseSystemMode(true)
+                setMode(null)
+            },
+        },
+        {
+            label: theme.dark,
             icon: `p-menuitem-icon pi pi-fw pi-moon ${mode === 'dark' && 'text-orange-500'}`,
             command: () => {
+                Cookies.set('useSystem', JSON.stringify(false))
+                Cookies.set('mode', JSON.stringify('dark'))
+                setIcon('sun')
                 setMode('dark')
                 setIsUseSystemMode(false)
                 dispatch(setTheme('dark'))
             },
         },
         {
-            label: 'Light',
+            label: theme.light,
             icon: `p-menuitem-icon pi pi-fw pi-sun ${mode === 'light' && 'text-orange-500'}`,
             command: () => {
+                Cookies.set('useSystem', JSON.stringify(false))
+                Cookies.set('mode', JSON.stringify('light'))
+                setIcon('moon')
                 setMode('light')
                 setIsUseSystemMode(false)
                 dispatch(setTheme('light'))
             },
-        },
-        {
-            label: 'System',
-            icon: `p-menuitem-icon pi pi-fw pi-cog ${isUseSystemMode && 'text-orange-500'}`,
-            command: () => {
-                setIsUseSystemMode(true)
-                setMode(null)
-            },
-        },
+        }
     ]
-
 
     useLayoutEffect(() => {
         if (isUseSystemMode) {
@@ -51,7 +62,9 @@ export const useBtnTheme = () => {
 
             const handleColorSchemeChange = (e?: any) => {
                 const systemTheme = darkModeQuery.matches ? 'dark' : 'light'
+                setIcon(systemTheme === 'dark' ? 'sun' : 'moon')
                 setSystemMode(systemTheme)
+                Cookies.set('systemMode', JSON.stringify(systemTheme))
             }
 
             darkModeQuery.addEventListener('change', handleColorSchemeChange)
@@ -75,5 +88,5 @@ export const useBtnTheme = () => {
         mode === 'dark' && document.documentElement.setAttribute("data-theme", "dark")
     }, [mode])
 
-    return { Menu, menuRight, items, mode }
+    return { Menu, menuRight, items, icon }
 }
