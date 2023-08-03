@@ -15,6 +15,9 @@ export async function POST(req: NextRequest, { params }: IParams) {
     const body = await req.json()
     const jsonData = JSON.stringify({ isPrefersColorScheme: true, theme: body }, null, 2)
 
+    console.log(body)
+
+
     const cssContent = body === 'dark' ? `@import url('./mode/dark-deeppurple.theme.css')` : `@import url('./mode/light-deeppurple.theme.css');`
 
     const writeCss = async () => {

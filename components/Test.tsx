@@ -8,15 +8,18 @@ export default function Test() {
     const [theme, setTheme] = useState('start')
 
     const setMode = async (mode: string) => {
-        fetch('api/theme', {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(mode),
-        })
+        fetch(
+            'api/theme',
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(mode),
+            },
+        )
             .then(res => res.json())
             .then(data => {
                 setTheme(data.themeSetting.theme)
-                console.log(data.themeSetting)
+                // console.log(data.themeSetting)
             })
         // .catch(err => console.log(err))
         // .finally(() => console.log('finally'))
