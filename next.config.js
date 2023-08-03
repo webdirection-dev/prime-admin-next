@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+    // reactStrictMode: true,
     experimental: {
-        serverActions: true
+        // serverActions: true
     },
     images: {
         // formats: ['image/avif, image/webp'],

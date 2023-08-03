@@ -1,30 +1,3 @@
-// export { default } from 'next-auth/middleware'
-// export const config = { matcher: ['/profile', '/protected/:path*'] }
-
-// import { NextResponse } from 'next/server'
-// import type { NextRequest } from 'next/server'
-
-// export function middleware(req: NextRequest) {
-//     const { pathname, searchParams } = req.nextUrl
-
-//     console.log(pathname)
-
-//     if (pathname === '/') {
-//         return NextResponse.redirect(new URL('/en', req.url))
-//     }
-
-//     return NextResponse.next()
-//     // return NextResponse.redirect(new URL('/en/team', req.url))
-// }
-
-// export const config = {
-//     // Matcher ignoring `/_next/` and `/api/`
-//     // matcher: '/en/about'
-//     matcher: ['/((?!api|_next/static|_next/img|favicon.ico).*)']
-// }
-
-
-
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
@@ -50,7 +23,8 @@ export function middleware(request: NextRequest) {
 
     const isTheme =
         pathname.endsWith('.svg') ||
-        pathname.endsWith('theme.css')
+        pathname.endsWith('theme.css') ||
+        pathname.endsWith('themes.json')
 
     const pathnameIsMissingLocale = i18n.locales.every(
         locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
