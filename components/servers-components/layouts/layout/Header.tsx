@@ -5,7 +5,7 @@ import ActiveBarButton from '@/components/ui/btns/ActiveBarButton'
 import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/utils/language/dictionary'
 
-export default async function Header({ lang }: { lang: Locale }) {
+export default async function Header({ lang, user }: { lang: Locale, user: any }) {
     const { activeBar, theme } = await getDictionary(lang)
 
     return (
@@ -19,7 +19,7 @@ export default async function Header({ lang }: { lang: Locale }) {
         >
             <Logo />
             <LeftBarButton />
-            <ThemeButton theme={theme} />
+            <ThemeButton theme={theme} user={user} />
             <ActiveBarButton lang={lang} activeBar={activeBar} />
         </header>
     )

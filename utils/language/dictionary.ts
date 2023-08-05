@@ -12,5 +12,5 @@ export const getDictionary = async (locale: Locale) => dictionaries[locale]()
 // export const getDictionary = async (locale: Locale) => {
 //     return (locale === 'en' || locale === 'de') ?
 //         dictionaries[locale]() :
-//         () => import('@/utils/dictionaries/en.json').then(module => module.default)
+//         () => import('@/utils/language/dictionaries/en.json').then(module => module.default)
 // }
