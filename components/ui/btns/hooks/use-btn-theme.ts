@@ -8,19 +8,11 @@ import { useRef, useLayoutEffect, useState, useEffect } from 'react'
 
 const rootDoc = document.documentElement
 
-// let initialSystemMode = true
-// let initialMode = null as null | string
-// if (typeof window !== "undefined") {
-//     if (localStorage.getItem("prefers-color") === 'false') initialSystemMode = false
-//     initialMode = localStorage.getItem("theme")
-// }
-
 export const useBtnTheme = (theme: any) => {
     const dispatch = useAppDispatch()
     const { themeRTK } = useAppSelector(store => selectTheme(store))
     const menuRight = useRef<Menu>(null)
-    const [isUseSystemMode, setIsUseSystemMode] = useState(true)
-    // const [mode, setMode] = useState<null | string>(null)
+    const [isUseSystemMode, setIsUseSystemMode] = useState(themeRTK === null || themeRTK === 'auto')
     const [icon, setIcon] = useState('')
 
     const items: MenuItem[] = [
@@ -31,7 +23,6 @@ export const useBtnTheme = (theme: any) => {
                 dispatch(setTheme(null))
                 changeThemeDriver('auto')
                 setIsUseSystemMode(true)
-                // typeof window !== "undefined" && localStorage.setItem('prefers-color', 'true')
             },
         },
         {
@@ -56,7 +47,6 @@ export const useBtnTheme = (theme: any) => {
         changeThemeDriver(theme)
         setIcon(theme === 'light' ? 'moon' : 'sun')
         setIsUseSystemMode(false)
-        // typeof window !== "undefined" && localStorage.setItem('prefers-color', 'false')
     }
 
     useLayoutEffect(() => {
@@ -75,12 +65,6 @@ export const useBtnTheme = (theme: any) => {
             }
         } else { setIcon(themeRTK === 'light' ? 'moon' : 'sun') }
     }, [isUseSystemMode])
-
-
-    useEffect(() => {
-        console.log(themeRTK)
-
-    }, [themeRTK])
 
     useLayoutEffect(() => {
         if (typeof window !== "undefined") {
