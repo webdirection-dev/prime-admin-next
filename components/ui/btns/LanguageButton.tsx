@@ -1,9 +1,49 @@
 'use client'
 
+import { MenuItem } from 'primereact/menuitem'
 import { useBtnLanguage } from './hooks/use-btn-language'
+import Link from 'next/link'
 
 export default function LanguageButton({ title }: any) {
-    const { Menu, menuRight, items, styles } = useBtnLanguage()
+    const { Menu, menuRight, styles, redirectedPathName, setIsShow } = useBtnLanguage()
+
+    const items: MenuItem[] = [
+        {
+            label: 'English (US)',
+            icon: 'p-menuitem-icon pi pi-fw pi-heart',
+            url: redirectedPathName('en'),
+            command: () => setIsShow(false)
+        },
+        {
+            label: 'Deutsch',
+            icon: 'p-menuitem-icon pi pi-fw pi-star',
+            url: redirectedPathName('de'),
+            command: () => setIsShow(false)
+        },
+        {
+            command: () => setIsShow(false),
+            template: (item, options) => {
+                return (
+                    <Link href="/en" className="p-menuitem-link" role="menuitem" data-pc-section="action">
+                        <span className="p-menuitem-icon pi pi-fw pi-heart" data-pc-section="icon"></span>
+                        <span className="p-menuitem-text" data-pc-section="label">English (US)</span>
+                    </Link>
+                )
+            }
+        },
+        {
+            command: () => setIsShow(false),
+            template: (item, options) => {
+                return (
+                    <Link href="/de" className="p-menuitem-link" role="menuitem" data-pc-section="action">
+                        <span className="p-menuitem-icon pi pi-fw pi-star" data-pc-section="icon"></span>
+                        <span className="p-menuitem-text" data-pc-section="label">Deutsch</span>
+                    </Link>
+                )
+            }
+        },
+    ]
+
     return (
         <div id='lang' className='flex justify-content-between align-items-center'>
             <button

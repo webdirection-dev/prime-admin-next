@@ -1,4 +1,4 @@
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/utils/language/i18n.config'
 import { getDictionary } from '@/utils/language/dictionary'
 import TopPanel from '@/components/servers-components/layouts/dashboard/TopPanel'
 import { CardTitle } from '@/components/ui/CardTitle'

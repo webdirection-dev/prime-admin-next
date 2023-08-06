@@ -2,7 +2,7 @@ import LeftBarButton from '@/components/ui/btns/LeftBarButton'
 import Logo from '@/components/ui/Logo'
 import ThemeButton from '@/components/ui/btns/ThemeButton'
 import ActiveBarButton from '@/components/ui/btns/ActiveBarButton'
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/utils/language/i18n.config'
 import { getDictionary } from '@/utils/language/dictionary'
 
 export default async function Header({ lang, user }: { lang: Locale, user: any }) {

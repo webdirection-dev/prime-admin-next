@@ -15,7 +15,8 @@ export async function updateUserAction(body: any) {
 }
 
 export async function findOneUserAction() {
-    const data = await fetch(baseUrl + '/api/user', { cache: 'no-store', next: { tags: ['collection'] } })
+    const data = await fetch(baseUrl + '/api/user')
+    // const data = await fetch(baseUrl + '/api/user', { cache: 'no-store', next: { tags: ['collection'] } })
     const user = await data.json()
     return { ...user }
 }

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Menu } from 'primereact/menu'
-import { MenuItem } from 'primereact/menuitem'
 import { usePathname } from 'next/navigation'
 
 export const useBtnLanguage = () => {
@@ -23,25 +22,6 @@ export const useBtnLanguage = () => {
         return segments.join('/')
     }
 
-    const items: MenuItem[] = [
-        {
-            label: 'English (US)',
-            icon: 'p-menuitem-icon pi pi-fw pi-heart',
-            url: redirectedPathName('en'),
-            command: () => {
-                setIsShow(false)
-            },
-        },
-        {
-            label: 'Deutsch',
-            icon: 'p-menuitem-icon pi pi-fw pi-star',
-            url: redirectedPathName('de'),
-            command: () => {
-                setIsShow(false)
-            },
-        },
-    ]
-
     useEffect(() => {
         const checkElement = (e: any) => {
             const btn = document.getElementById('lang')?.contains(e.target)
@@ -58,5 +38,5 @@ export const useBtnLanguage = () => {
         }
     }, [isShow])
 
-    return { Menu, menuRight, items, styles }
+    return { Menu, menuRight, styles, redirectedPathName, setIsShow }
 }
