@@ -5,15 +5,16 @@ import { Menu } from 'primereact/menu'
 import { MenuItem } from 'primereact/menuitem'
 import { setTheme } from '@/utils/lib/store/theme-slice'
 import { useRef, useLayoutEffect, useState, useEffect } from 'react'
+import Cookies from 'js-cookie'
 
 const rootDoc = document.documentElement
 let initialSystemMode = true
 let initialMode = null as null | string
 
-if (typeof window !== "undefined") {
-    if (localStorage.getItem("prefers-color") === 'false') initialSystemMode = false
-    initialMode = localStorage.getItem("theme")
-}
+const prefersCookies = Cookies.get('prefers-color') && JSON.parse(Cookies.get('prefers-color') as string)
+if (prefersCookies && prefersCookies === 'false') initialSystemMode = false
+initialMode = Cookies.get('theme') && JSON.parse(Cookies.get('theme') as string) || null
+
 
 export const useBtnTheme = (theme: any) => {
     const dispatch = useAppDispatch()
@@ -30,7 +31,7 @@ export const useBtnTheme = (theme: any) => {
                 changeThemeDriver('auto')
                 setIsUseSystemMode(true)
                 setMode(null)
-                typeof window !== "undefined" && localStorage.setItem('prefers-color', 'true')
+                Cookies.set('prefers-color', JSON.stringify('true'))
             },
         },
         {
@@ -47,6 +48,7 @@ export const useBtnTheme = (theme: any) => {
 
     const changeThemeDriver = (theme: string) => {
         localStorage.setItem('theme', theme)
+        Cookies.set('theme', JSON.stringify(theme))
         rootDoc.setAttribute('data-theme', theme)
     }
 
@@ -55,7 +57,7 @@ export const useBtnTheme = (theme: any) => {
         setMode(theme)
         setIcon(theme === 'light' ? 'moon' : 'sun')
         setIsUseSystemMode(false)
-        typeof window !== "undefined" && localStorage.setItem('prefers-color', 'false')
+        Cookies.set('prefers-color', JSON.stringify('false'))
     }
 
     useLayoutEffect(() => {
