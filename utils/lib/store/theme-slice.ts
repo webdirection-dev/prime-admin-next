@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from './index'
 
 const initialState: any = {
-    theme: null,
+    theme: (typeof window !== "undefined" && localStorage.getItem("theme")) || null
 }
 
 const themeSlice = createSlice({
@@ -28,4 +28,5 @@ export const themeReducer = themeSlice.reducer
 //selectors
 export const selectTheme = (state: RootState) => ({
     theme: state.themeReducer.theme,
+    themeRTK: state.themeReducer.theme,
 })
