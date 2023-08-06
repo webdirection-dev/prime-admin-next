@@ -3,14 +3,14 @@ import "primeicons/primeicons.css"
 import 'primeflex/primeflex.css'
 import '@/utils/styles/reset.css'
 import '@/utils/styles/globals.css'
+import '@/utils/styles/theme.css'
 
 import Providers from '@/components/ui/withChildren/Providers'
 import General from '@/components/servers-components/layouts/layout/General'
 import { Locale, i18n } from '@/utils/language/i18n.config'
 import { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import { findOneUserAction } from '@/utils/lib/mongodb/actions'
-
+// import { findOneUserAction } from '@/utils/lib/mongodb/actions'
 
 const roboto = Roboto({
     subsets: ['latin'],
@@ -33,18 +33,19 @@ export async function generateStaticParams() {
 export const revalidate = 0
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: { lang: Locale } }) {
-    const user = await findOneUserAction()
-    const mode = user.isPrefersColorScheme ? 'auto' : user.theme
+    // const user = await findOneUserAction()
+    // const mode = user.isPrefersColorScheme ? 'auto' : user.theme
 
     return (
-        <html lang={params.lang} suppressHydrationWarning={true}>
+        <html lang={params.lang} suppressHydrationWarning={true} data-theme='auto'>
             <head>
-                <link id="app-theme" href={"/themes/" + mode + "-deeppurple.theme.css"} rel="stylesheet" />
+                {/* <link id="app-theme" href={"/themes/" + mode + "-deeppurple.theme.css"} rel="stylesheet" /> */}
             </head>
 
             <body className={roboto.className + ' flex flex-column justify-content-between'} style={{ minHeight: '100vh' }}>
                 <Providers>
-                    <General lang={params.lang} user={user}>
+                    <General lang={params.lang}>
+                        {/* <General lang={params.lang} user={user}> */}
                         {children}
                     </General>
                 </Providers>

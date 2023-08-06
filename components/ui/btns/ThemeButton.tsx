@@ -2,8 +2,8 @@
 
 import { useBtnTheme } from './hooks/use-btn-theme'
 
-export default function ThemeButton({ theme, user }: any) {
-    const { Menu, menuRight, items, icon } = useBtnTheme(theme, user)
+export default function ThemeButton({ theme }: any) {
+    const { Menu, menuRight, items, icon } = useBtnTheme(theme)
 
     return (
         <>
