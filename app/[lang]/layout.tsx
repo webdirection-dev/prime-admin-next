@@ -30,7 +30,7 @@ export async function generateStaticParams() {
     return i18n.locales.map(locale => ({ lang: locale }))
 }
 
-// export const revalidate = 0
+export const revalidate = 0
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: { lang: Locale } }) {
     const user = await findUserAction()
