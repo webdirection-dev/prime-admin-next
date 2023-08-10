@@ -426,32 +426,32 @@
 
     .calendarForChrome .p-datepicker {
         padding: 0.5rem;
-        background: #ffffff;
-        color: rgba(0, 0, 0, 0.87);
-        border: 1px solid #e5e5e5;
+        background: #1e1e1e;
+        color: rgba(255, 255, 255, 0.87);
+        border: 1px solid hsla(0, 0%, 100%, 0.3);
         border-radius: 4px;
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-header {
-        padding: 0.5rem;
-        color: rgba(0, 0, 0, 0.87);
-        background: #ffffff;
-        font-weight: 500;
-        margin: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        border-top-right-radius: 4px;
-        border-top-left-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 0.5rem;
+        color: rgba(255, 255, 255, 0.87);
+        background: #1e1e1e;
+        font-weight: 500;
+        margin: 0;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.12);
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
     }
 
 
     .calendarForChrome .p-datepicker .p-datepicker-title {
+        color: rgba(255, 255, 255, 0.87);
+        font-weight: 500;
         margin: 0 auto 0 0;
         order: 1;
-        color: rgba(0, 0, 0, 0.87);
-        font-weight: 500;
         line-height: 2.5rem;
     }
 
@@ -463,7 +463,7 @@
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-title .p-datepicker-month:hover {
-        color: #673AB7;
+        color: #CE93D8;
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-title .p-datepicker-year {
@@ -474,14 +474,14 @@
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-title .p-datepicker-year:hover {
-        color: #673AB7;
+        color: #CE93D8;
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-prev {
         order: 2;
         width: 2.5rem;
         height: 2.5rem;
-        color: rgba(0, 0, 0, 0.87);
+        color: rgba(255, 255, 255, 0.6);
         border: 0 none;
         background: transparent;
         border-radius: 50%;
@@ -489,16 +489,16 @@
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-prev:hover {
-        color: rgba(0, 0, 0, 0.87);
+        color: rgba(255, 255, 255, 0.6);
         border-color: transparent;
-        background: rgba(0, 0, 0, 0.04);
+        background: rgba(255, 255, 255, 0.04);
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-next {
         order: 3;
         width: 2.5rem;
         height: 2.5rem;
-        color: rgba(0, 0, 0, 0.87);
+        color: rgba(255, 255, 255, 0.6);
         border: 0 none;
         background: transparent;
         border-radius: 50%;
@@ -506,9 +506,9 @@
     }
 
     .calendarForChrome .p-datepicker .p-datepicker-next:hover {
-        color: rgba(0, 0, 0, 0.87);
+        color: rgba(255, 255, 255, 0.6);
         border-color: transparent;
-        background: rgba(0, 0, 0, 0.04);
+        background: rgba(255, 255, 255, 0.04);
     }
 
 
@@ -518,10 +518,10 @@
     }
 
     .calendarForChrome .p-datepicker table th {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        color: rgba(0, 0, 0, 0.38);
+        color: rgba(255, 255, 255, 0.38);
         font-weight: 400;
         font-size: 0.875rem;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.12);
         padding: 0.5rem;
     }
 
@@ -530,18 +530,12 @@
     }
 
     .calendarForChrome .p-datepicker table td.p-datepicker-today>span {
-        background: #ffffff;
-        color: rgba(0, 0, 0, 0.87);
-        border-color: rgb(0, 0, 0);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.38);
     }
 
     .calendarForChrome .p-datepicker table td>span.p-highlight {
-        color: #673AB7;
-        background: rgba(103, 58, 183, 0.12);
-    }
-
-    .calendarForChrome .p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
-        background: rgba(0, 0, 0, 0.04);
+        color: #CE93D8;
+        background: rgba(206, 147, 216, 0.16);
     }
 
     .calendarForChrome .p-datepicker td>span {
@@ -560,7 +554,7 @@
     }
 
     .calendarForChrome .p-datepicker td>span:hover {
-        background: rgba(0, 0, 0, 0.04);
+        background: rgba(255, 255, 255, 0.04);
     }
 
     .calendarForChrome .p-datepicker .p-monthpicker .p-monthpicker-month {
@@ -586,11 +580,11 @@
     }
 
     .calendarForChrome .p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-disabled):not(.p-highlight):hover {
-        background: rgba(0, 0, 0, 0.04);
+        background: rgba(255, 255, 255, 0.04);
     }
 
     .calendarForChrome .p-datepicker:not(.p-disabled) .p-yearpicker .p-yearpicker-year:not(.p-disabled):not(.p-highlight):hover {
-        background: rgba(0, 0, 0, 0.04);
+        background: rgba(255, 255, 255, 0.04);
     }
 }
 
