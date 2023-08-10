@@ -4,6 +4,7 @@ import 'primeflex/primeflex.css'
 import '@/utils/styles/reset.css'
 import '@/utils/styles/globals.css'
 import '@/utils/styles/theme.css'
+import '@/utils/styles/chrome.css'
 
 import Providers from '@/components/ui/withChildren/Providers'
 import General from '@/components/servers-components/layouts/layout/General'

@@ -5,21 +5,9 @@ import { useBtnLanguage } from './hooks/use-btn-language'
 import Link from 'next/link'
 
 export default function LanguageButton({ title }: any) {
-    const { Menu, menuRight, styles, redirectedPathName, setIsShow } = useBtnLanguage()
+    const { Menu, menuRight, styles, setIsShow } = useBtnLanguage()
 
     const items: MenuItem[] = [
-        // {
-        //     label: 'English (US)',
-        //     icon: 'p-menuitem-icon pi pi-fw pi-heart',
-        //     url: redirectedPathName('en'),
-        //     command: () => setIsShow(false)
-        // },
-        // {
-        //     label: 'Deutsch',
-        //     icon: 'p-menuitem-icon pi pi-fw pi-star',
-        //     url: redirectedPathName('de'),
-        //     command: () => setIsShow(false)
-        // },
         {
             command: () => setIsShow(false),
             template: (item, options) => {
@@ -67,6 +55,7 @@ export default function LanguageButton({ title }: any) {
                 ref={menuRight}
                 id='menu-lang'
                 popupAlignment='left'
+                className='menuForChrome'
             />
         </div>
     )

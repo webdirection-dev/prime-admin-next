@@ -22,6 +22,7 @@ export default function CardButton({ btn, btnTile }: any) {
                 ref={menuLeft}
                 id='btn-popup'
                 popupAlignment='left'
+                className='menuForChrome'
             />
         </>
     )

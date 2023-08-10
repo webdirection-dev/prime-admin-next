@@ -35,7 +35,8 @@ body {
   width: 38px !important
 }
 
-#menu-lang {
+#menu-lang,
+#btn-theme {
   top: 60px !important
 }
 

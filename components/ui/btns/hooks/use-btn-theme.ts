@@ -14,6 +14,13 @@ export const useBtnTheme = (theme: any) => {
     const menuRight = useRef<Menu>(null)
     const [isUseSystemMode, setIsUseSystemMode] = useState(themeRTK === null || themeRTK === 'auto')
     const [icon, setIcon] = useState('')
+    const [isShow, setIsShow] = useState(false)
+
+    const styles = isShow ? {
+        outline: '0 none',
+        outlineOffset: '0',
+        boxShadow: '0 0 0 0.2rem #C7D2FE',
+    } : {}
 
     const items: MenuItem[] = [
         {
@@ -23,17 +30,24 @@ export const useBtnTheme = (theme: any) => {
                 dispatch(setTheme(null))
                 changeThemeDriver('auto')
                 setIsUseSystemMode(true)
+                setIsShow(false)
             },
         },
         {
             label: theme.dark,
             icon: `p-menuitem-icon pi pi-fw pi-moon ${themeRTK === 'dark' && 'text-orange-500'}`,
-            command: () => handlerClick('dark'),
+            command: () => {
+                setIsShow(false)
+                handlerClick('dark')
+            },
         },
         {
             label: theme.light,
             icon: `p-menuitem-icon pi pi-fw pi-sun ${themeRTK === 'light' && 'text-orange-500'}`,
-            command: () => handlerClick('light'),
+            command: () => {
+                setIsShow(false)
+                handlerClick('light')
+            },
         }
     ]
 
@@ -73,5 +87,21 @@ export const useBtnTheme = (theme: any) => {
         }
     }, [])
 
-    return { Menu, menuRight, items, icon }
+    useEffect(() => {
+        const checkElement = (e: any) => {
+            const btn = document.getElementById('theme')?.contains(e.target)
+            const menu = document.getElementById('btn-theme')?.contains(e.target)
+            if (btn) setIsShow(!isShow)
+            if (!btn) setIsShow(false)
+            if (!btn && menu && isShow) setIsShow(true)
+        }
+
+        document.addEventListener('click', checkElement)
+
+        return () => {
+            document.removeEventListener('click', checkElement)
+        }
+    }, [isShow])
+
+    return { Menu, menuRight, items, icon, styles, setIsShow, isShow }
 }
