@@ -34,19 +34,12 @@ export async function generateStaticParams() {
 export const revalidate = 0
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: { lang: Locale } }) {
-    // const user = await findOneUserAction()
-    // const mode = user.isPrefersColorScheme ? 'auto' : user.theme
 
     return (
         <html lang={params.lang} suppressHydrationWarning={true} data-theme='auto'>
-            <head>
-                {/* <link id="app-theme" href={"/themes/" + mode + "-deeppurple.theme.css"} rel="stylesheet" /> */}
-            </head>
-
             <body className={roboto.className + ' flex flex-column justify-content-between'} style={{ minHeight: '100vh' }}>
                 <Providers>
                     <General lang={params.lang}>
-                        {/* <General lang={params.lang} user={user}> */}
                         {children}
                     </General>
                 </Providers>

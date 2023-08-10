@@ -8,7 +8,7 @@ export const sections = [
     {
         name: 'components',
         list: [
-            { title: 'sdff', path: '/ff' },
+            { title: 'sdff', path: '/' },
         ]
     },
 ]
