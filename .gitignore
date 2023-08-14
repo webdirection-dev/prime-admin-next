@@ -17,4 +17,3 @@ package-lock.json
 next-env.d.ts
 
 .gitattributes
-.env.local
